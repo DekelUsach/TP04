@@ -30,10 +30,11 @@ public class HomeController : Controller
     {
         if(Destino >= 1 && Destino<= 10 && Excursion >= 1 && Excursion<= 10 && Hotel >= 1 && Hotel<= 10 && Aereo >= 1 && Aereo<= 10){
             ViewBag.MensajeError = "Error, debe ingresar un numero valido";
+            return View("SelectPaquete");
         }
         Paquete nuevoPaquete = new Paquete(Hotel.ToString(), Excursion.ToString(), Aereo.ToString());
         ORTWorld.IngresarPaquete(Destino.ToString(), nuevoPaquete);
         ViewBag.Dic = ORTWorld.Paquetes;
-        return  View();
+        return ViewBag("Index");
     }
 }
