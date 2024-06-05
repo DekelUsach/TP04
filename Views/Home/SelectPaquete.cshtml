@@ -3,32 +3,39 @@
 <section>
     </div>
     <form action='@Url.Action("GuardarPaquete","Home")'>
+
      <select name="Destino">
-            <optgroup label="Destino">
+     <option disabled="" selected="">Destinos</option>
                 @for (int i = 1; i <= 10; i++)
                 {
                     <option value="@i"> @(ViewBag.ListaDestinos[@i-1])</option>
                 }
             </optgroup>
         </select>
+
+
         <select name="Aereo">
-            <optgroup label="Aviones">
+             <option disabled="" selected="">Aereos</option>
                 @for (int i = 1; i <= 10; i++)
                 {
                     <option value="@i">Avion @(i)</option>
                 }
             </optgroup>
         </select>
+
+
         <select  name="Excursion">
-            <optgroup label="Excursiones">
+                 <option disabled="" selected="">Excursiones</option>
                 @for (int i = 1; i <= 10; i++)
                 {
                     <option value="Excursion@(i)">Excursiones @(i)</option>
                 }
             </optgroup>
         </select>
+
+
         <select  name="Hotel">
-            <optgroup label="Hoteles">
+           <option disabled="" selected="">Hoteles</option>
                 @for (int i = 1; i <= 10; i++)
                 {
                     <option value="Hotel@(i)">Hotel @(i)</option>
