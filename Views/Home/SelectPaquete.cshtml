@@ -1,0 +1,80 @@
+
+
+<section>
+    </div>
+    <form action='@Url.Action("GuardarPaquete","Home")'>
+     <select name="Destino">
+            <optgroup label="Destino">
+                @for (int i = 1; i <= 10; i++)
+                {
+                    <option value="@i"> @(ViewBag.ListaDestinos[@i-1])</option>
+                }
+            </optgroup>
+        </select>
+        <select name="Aereo">
+            <optgroup label="Aviones">
+                @for (int i = 1; i <= 10; i++)
+                {
+                    <option value="@i">Avion @(i)</option>
+                }
+            </optgroup>
+        </select>
+        <select  name="Excursion">
+            <optgroup label="Excursiones">
+                @for (int i = 1; i <= 10; i++)
+                {
+                    <option value="Excursion@(i)">Excursiones @(i)</option>
+                }
+            </optgroup>
+        </select>
+        <select  name="Hotel">
+            <optgroup label="Hoteles">
+                @for (int i = 1; i <= 10; i++)
+                {
+                    <option value="Hotel@(i)">Hotel @(i)</option>
+                }
+            </optgroup>
+        </select>
+        
+
+        <input type="submit" value="Submit"/>
+    </form>
+
+
+
+    <div class="listadofotos">
+    @{   
+    int numero = 1 ;
+    foreach (string hotel in @ViewBag.ListaHoteles)
+    {
+    
+        <div>
+            <p>Destino: @numero</p>
+            <img src="/images/@hotel">
+        </div>
+        numero++;
+    }
+    numero = 1;
+    foreach (string Avion in @ViewBag.ListaAviones)
+    {
+    
+        <div>
+            <p>Avion: @numero</p>
+            <img src="/images/@Avion">
+        </div>
+
+        numero++;   
+    }
+     numero = 1;
+    foreach (string Excursion in @ViewBag.ListaExcursiones)
+    {
+        <div>
+            <p>Excursion: @numero</p>
+            <img src="/images/@Excursion">
+        </div>
+        numero++;   
+    }
+    }
+    </div>
+    
+</section>

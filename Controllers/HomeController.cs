@@ -23,7 +23,10 @@ public class HomeController : Controller
     }
     public IActionResult SelectPaquete()
     {
-        
+        @ViewBag.ListaHoteles = ORTWorld.ListaHoteles;
+        @ViewBag.ListaAviones = ORTWorld.ListaAereos;
+        @ViewBag.ListaExcursiones = ORTWorld.ListaExcursiones;
+        @ViewBag.ListaDestinos = ORTWorld.ListaDestinos;
         return View();
     }
     public IActionResult GuardarPaquete (int Destino, int Hotel, int Aereo, int Excursion)

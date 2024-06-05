@@ -1,9 +1,46 @@
 public class ORTWorld
 {
-    public static List<string> ListaDestinos { get; private set; } = new List<string>();
-    public static List<string> ListaHoteles { get; private set; } = new List<string>();
-    public static List<string> ListaAereos { get; private set; } = new List<string>();
-    public static List<string> ListaExcursiones { get; private set; } = new List<string>();
+    public static List<string> ListaDestinos { get; private set; } = new List<string>
+    {
+        "París", "Londres", "Nueva York", "Tokio", "Roma",
+        "Sídney", "Barcelona", "Dubái", "Los Ángeles", "Río de Janeiro"
+    };
+    public static List<string> ListaHoteles { get; private set; } = new List<string>{
+        "Hotel 1.webp",
+        "Hotel 2.webp",
+        "Hotel 3.webp",
+        "Hotel 4.webp",
+        "Hotel 5.webp",
+        "Hotel 6.webp",
+        "Hotel 7.webp",
+        "Hotel 8.webp",
+        "Hotel 9.webp",
+        "Hotel 10.webp"
+    };
+    public static List<string> ListaAereos { get; private set; } = new List<string>{
+        "Avion 1.webp",
+        "Avion 2.webp",
+        "Avion 3.webp",
+        "Avion 4.webp",
+        "Avion 5.webp",
+        "Avion 6.webp",
+        "Avion 7.webp",
+        "Avion 8.webp",
+        "Avion 9.webp",
+        "Avion 10.webp"
+    };
+    public static List<string> ListaExcursiones { get; private set; } = new List<string>{
+        "Excu 1.webp",
+        "Excu 2.webp",
+        "Excu 3.webp",
+        "Excu 4.webp",
+        "Excu 5.webp",
+        "Excu 6.webp",
+        "Excu 7.webp",
+        "Excu 8.webp",
+        "Excu 9.webp",
+        "Excu 10.webp"
+    };
     public static Dictionary<string, Paquete> Paquetes { get; private set; } = new Dictionary<string, Paquete>();
 
     public static bool IngresarPaquete(string destinoSeleccionado, Paquete paquete)
@@ -19,59 +56,6 @@ public class ORTWorld
             esValido = true;
         }
         return esValido;
-    }
-    public ORTWorld()
-    {
-        //Hoteles
-ListaHoteles.Add("Hotel 1.webp");
-ListaHoteles.Add("Hotel 2.webp");
-ListaHoteles.Add("Hotel 3.webp");
-ListaHoteles.Add("Hotel 4.webp");
-ListaHoteles.Add("Hotel 5.webp");
-ListaHoteles.Add("Hotel 6.webp");
-ListaHoteles.Add("Hotelk 7.webp");
-ListaHoteles.Add("Hotel 8.webp");
-ListaHoteles.Add("Hotel 9.webp");
-ListaHoteles.Add("Hotel 10.webp");
-//Destinos
-ListaDestinos.Add("París");
-ListaDestinos.Add("Tokio");
-ListaDestinos.Add("Roma");
-ListaDestinos.Add("Nueva York");
-ListaDestinos.Add("Barcelona");
-ListaDestinos.Add("Sidney");
-ListaDestinos.Add("Ciudad del Cabo");
-ListaDestinos.Add("Buenos Aires");
-ListaDestinos.Add("Praga");
-ListaDestinos.Add("Cancu");
-//Lista Aereos
-ListaAereos.Add("");
-ListaAereos.Add("");
-ListaAereos.Add("");
-ListaAereos.Add("");
-ListaAereos.Add("");
-ListaAereos.Add("");
-ListaAereos.Add("");
-ListaAereos.Add("");
-ListaAereos.Add("");
-ListaAereos.Add("");
-
-    }
-    private static void precargarDestinos()
-    {
-        List<string> destinos = new List<string>{
-            "París",
-            "Tokio",
-            "Roma",
-            "Nueva York",
-            "Barcelona",
-            "Sydney",
-            "Ciudad del Cabo",
-            "Buenos Aires",
-            "Praga",
-            "Cancún"
-    };
-        ListaDestinos = destinos;
     }
 
 }
