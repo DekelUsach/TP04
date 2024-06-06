@@ -7,3 +7,19 @@
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 <a href = '@Url.Action("SelectPaquete","Home")'>SelectPaquete</a>
+
+@{
+    int num = 1;
+    if(ViewBag.Dic != null){
+    foreach(Paquete paque in ViewBag.Dic.Values ){
+        
+        <div>
+        <h2> Paquete @num</h2>
+        <p>Destino @paque.Aereo</p>
+        <p>Hotel @paque.Hotel</p>
+        <p>Excursion @paque.Excursion</p>
+        </div>
+        num++;
+    }
+    }
+}
