@@ -10,16 +10,17 @@
 
 @{
     int num = 1;
-    if(ViewBag.Dic != null){
-    foreach(Paquete paque in ViewBag.Dic.Values ){
-        
-        <div>
-        <h2> Paquete @num</h2>
-        <p>Destino @paque.Aereo</p>
-        <p>Hotel @paque.Hotel</p>
-        <p>Excursion @paque.Excursion</p>
+
+    if(ViewBag.Dic != null)
+    {
+    foreach(string destino in ViewBag.Dic.Keys )
+        {
+
+        int destinoFinal = int.Parse(destino);
+        <div>   
+    <p>@ViewBag.ListaDestinos[destinoFinal]</p>
         </div>
         num++;
-    }
+        }
     }
 }
