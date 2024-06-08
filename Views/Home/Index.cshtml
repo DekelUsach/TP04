@@ -11,6 +11,7 @@
 @if (ViewBag.Dic != null)
 {
     <div>
+     
         <h2>Paquetes Guardados</h2>
         <ul>
             @foreach (var destino in ViewBag.Dic.Keys)
@@ -18,6 +19,7 @@
                 var paquete = ViewBag.Dic[destino];
                 int destinoIndex = int.Parse(destino) - 1;
                 <li>
+                    
                     <h3>@ORTWorld.ListaDestinos[destinoIndex]</h3>
                     <p>Hotel elegido:</p>
                     <img src="/images/@paquete.Hotel" alt="Imagen hotel">
