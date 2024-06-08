@@ -6,21 +6,28 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-<a href = '@Url.Action("SelectPaquete","Home")'>SelectPaquete</a>
+<a href='@Url.Action("SelectPaquete","Home")'>SelectPaquete</a>
 
-@{
-    int num = 1;
+@if (ViewBag.Dic != null)
+{
+    <div>
+        <h2>Paquetes Guardados</h2>
+        <ul>
+            @foreach (var destino in ViewBag.Dic.Keys)
+            {
+                var paquete = ViewBag.Dic[destino];
+                int destinoIndex = int.Parse(destino) - 1;
+                <li>
+                    <h3>@ORTWorld.ListaDestinos[destinoIndex]</h3>
+                    <p>Hotel elegido:</p>
+                    <img src="/images/@paquete.Hotel" alt="Imagen hotel">
+                    <p>Avion elegido:</p>
+                    <img src="/images/@paquete.Aereo" alt="Imagen Aereo">
+                    <p>Excursion elegida:</p>
+                    <img src="/images/@paquete.Excursion" alt="Imagen excursion">
 
-    if(ViewBag.Dic != null)
-    {
-    foreach(string destino in ViewBag.Dic.Keys )
-        {
-
-        int destinoFinal = int.Parse(destino);
-        <div>   
-    <p>@ViewBag.ListaDestinos[destinoFinal]</p>
-        </div>
-        num++;
-        }
-    }
+                </li>
+            }
+        </ul>
+    </div>
 }
