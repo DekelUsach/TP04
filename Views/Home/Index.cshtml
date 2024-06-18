@@ -6,30 +6,40 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+<div class="boton">
 <a href='@Url.Action("SelectPaquete","Home")'>SelectPaquete</a>
-
+</div>
+<section class="paquetes">
 @if (ViewBag.Dic != null)
 {
-    <div>
-     
+    <div class="mensajepaquete">
         <h2>Paquetes Guardados</h2>
+    </div>
+    <div class="paqueteguardado">
         <ul>
             @foreach (var destino in ViewBag.Dic.Keys)
             {
                 var paquete = ViewBag.Dic[destino];
                 int destinoIndex = int.Parse(destino) - 1;
                 <li>
-                    
                     <h3>@ORTWorld.ListaDestinos[destinoIndex]</h3>
-                    <p>Hotel elegido:</p>
-                    <img src="/images/@paquete.Hotel" alt="Imagen hotel">
-                    <p>Avion elegido:</p>
-                    <img src="/images/@paquete.Aereo" alt="Imagen Aereo">
-                    <p>Excursion elegida:</p>
-                    <img src="/images/@paquete.Excursion" alt="Imagen excursion">
-
+                    <div class="imagenes">
+                        <div>
+                        <p>Hotel elegido:</p>
+                        <img src="/images/@paquete.Hotel" alt="Imagen hotel">
+                        </div>
+                        <div>
+                        <p>Avion elegido:</p>
+                        <img src="/images/@paquete.Aereo" alt="Imagen Aereo">
+                        </div>
+                        <div>
+                        <p>Excursion elegida:</p>
+                        <img src="/images/@paquete.Excursion" alt="Imagen excursion">
+                        </div>
+                    </div>
                 </li>
             }
         </ul>
     </div>
 }
+</section>

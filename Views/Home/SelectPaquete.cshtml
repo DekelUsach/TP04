@@ -1,91 +1,105 @@
-<h1>Seleccione su Paquete</h1>
- <p>@ViewBag.MensajeError </p>
-<section>
-    </div>
-    <form action='@Url.Action("GuardarPaquete","Home")'>
+<div class="selectPaquete">
+    <h1>Seleccione su Paquete</h1>
+    <p>@ViewBag.MensajeError </p>
+    <section>
+</div>
+<form action='@Url.Action("GuardarPaquete","Home")' class="opciones">
 
-     <select name="Destino">
-     <option disabled="" selected=" ">Destinos</option>
-                @for (int i = 1; i <= 10; i++)
-                {
-                    <option value="@i"> @(ViewBag.ListaDestinos[@i-1])</option>
-                }
-            </optgroup>
-        </select>
- 
-
-        <select name="Aereo">
-             <option disabled="" selected="">Aereos</option>
-                @for (int i = 1; i <= 10; i++)
-                {
-                    <option value="@i">Avion @(i)</option>
-                }
-            </optgroup>
-        </select>
+    <select name="Destino">
+        <optgroup>
+            <option disabled="" selected=" ">Destinos</option>
+            @for (int i = 1; i <= 10; i++)
+            {
+                <option value="@i"> @(ViewBag.ListaDestinos[@i - 1])</option>
+            }
+        </optgroup>
+    </select>
 
 
-        <select  name="Excursion">
-                 <option disabled="" selected="">Excursiones</option>
-                @for (int i = 1; i <= 10; i++)
-                {
-                    <option value="@i">Excursiones @(i)</option>
-                }
-            </optgroup>
-        </select>
+    <select name="Aereo">
+        <optgroup>
+            <option disabled="" selected="">Aereos</option>
+            @for (int i = 1; i <= 10; i++)
+            {
+                <option value="@i">Avion @(i)</option>
+            }
+        </optgroup>
+    </select>
 
 
-        <select  name="Hotel">
-           <option disabled="" selected="">Hoteles</option>
-                @for (int i = 1; i <= 10; i++)
-                {
-                    <option value="@i">Hotel @(i)</option>
-                }
-            </optgroup>
-        </select>
-        
+    <select name="Excursion">
+        <optgroup>
+            <option disabled="" selected="">Excursiones</option>
+            @for (int i = 1; i <= 10; i++)
+            {
+                <option value="@i">Excursiones @(i)</option>
+            }
+        </optgroup>
+    </select>
 
-        <input type="submit" value="Enviar"/> 
-    </form>
+
+    <select name="Hotel">
+        <optgroup>
+            <option disabled="" selected="">Hoteles</option>
+            @for (int i = 1; i <= 10; i++)
+            {
+                <option value="@i">Hotel @(i)</option>
+            }
+        </optgroup>
+    </select>
+
+
+    <input type="submit" value="Enviar" />
+</form>
 
 <!-- Mostrar Fotos -->
 
-    <div class="listadofotos">
-    @{   
-    int numero = 1 ;
-    foreach (string hotel in @ViewBag.ListaHoteles)
-    {
-    
-        <div>
-            <p>Hotel: @numero</p>
-            <img src="/images/@hotel">
-        </div>
-        numero++;
-    }
-    numero = 1;
-    foreach (string Avion in @ViewBag.ListaAviones)
-    {
-    
-        <div>
-            <p>Avion: @numero</p>
-            <img src="/images/@Avion">
-        </div>
-
-        numero++;   
-    }
-     numero = 1;
-    foreach (string Excursion in @ViewBag.ListaExcursiones)
-    {
-        <div>
-            <p>Excursion: @numero</p>
-            <img src="/images/@Excursion">
-        </div>
-        numero++;   
-    }
-    }
-    </div>
+<div class="listadofotos">
+    <div class="column hoteles">
     @{
-        if(ViewBag.MensajeError != string.Empty){
-            <h1>@ViewBag.MensajeError</h1>
+            
+
+        int numero = 1;
+        foreach (string hotel in @ViewBag.ListaHoteles)
+        {
+
+            <div>
+                <p>Hotel: @numero</p>
+                <img src="/images/@hotel">
+            </div>
+            numero++;
         }
+        
+        numero = 1;
+        foreach (string Avion in @ViewBag.ListaAviones)
+        {
+
+            <div>
+                <p>Avion: @numero</p>
+                <img src="/images/@Avion">
+            </div>
+
+            numero++;
+        }
+
+        numero = 1;
+        foreach (string Excursion in @ViewBag.ListaExcursiones)
+        {
+            <div>
+                <p>Excursion: @numero</p>
+                <img src="/images/@Excursion">
+            </div>
+            numero++;
+        }
+
     }
+    
+</div>
+@{
+    if (ViewBag.MensajeError != string.Empty)
+    {
+        <h1>@ViewBag.MensajeError</h1>
+    }
+}
 </section>
+</div>
