@@ -55,12 +55,13 @@
 <!-- Mostrar Fotos -->
 
 <div class="listadofotos">
-    <div class="column hoteles">
+    <div class="boxgrande">
     @{
             
-
+        
         int numero = 1;
-        foreach (string hotel in @ViewBag.ListaHoteles)
+        <div class="box">
+        @foreach (string hotel in @ViewBag.ListaHoteles)
         {
 
             <div>
@@ -69,9 +70,10 @@
             </div>
             numero++;
         }
-        
+        </div>
         numero = 1;
-        foreach (string Avion in @ViewBag.ListaAviones)
+        <div class="box">
+        @foreach (string Avion in @ViewBag.ListaAviones)
         {
 
             <div>
@@ -81,9 +83,10 @@
 
             numero++;
         }
-
+        </div>
         numero = 1;
-        foreach (string Excursion in @ViewBag.ListaExcursiones)
+        <div class="box">
+        @foreach (string Excursion in @ViewBag.ListaExcursiones)
         {
             <div>
                 <p>Excursion: @numero</p>
@@ -91,6 +94,7 @@
             </div>
             numero++;
         }
+        </div>
 
     }
     
